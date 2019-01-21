@@ -9,7 +9,7 @@ import { TokenStorageService } from './auth/token-storage.service';
 export class AppComponent {
   title = 'Slotgame';
   private roles: string[];
-  private authority: string;
+  public authority: string;
  
   constructor(private tokenStorage: TokenStorageService) { }
  
