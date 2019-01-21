@@ -15,8 +15,8 @@ const httpOptions = {
 })
 export class AuthService {
  
-  private loginUrl = 'http://localhost:8080/rest/auth/signin';
-  private signupUrl = 'http://localhost:8080/rest/auth/signup';
+  private loginUrl = 'https://protected-bayou-76067.herokuapp.com/rest/auth/signin';
+  private signupUrl = 'https://protected-bayou-76067.herokuapp.com/rest/auth/signup';
  
   constructor(private http: HttpClient) {
   }

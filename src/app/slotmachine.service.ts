@@ -6,30 +6,31 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class SlotmachineService {
+  private URI = 'https://protected-bayou-76067.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/rest/slotmachine');
+    return this.http.get(this.URI + 'rest/slotmachine');
   }
 
   get(id: string) {
-    return this.http.get('//localhost:8080/rest/slotmachine/'+id);
+    return this.http.get(this.URI + 'rest/slotmachine/'+id);
   }
 
   getBySlotroomId(slotroomId: string): Observable<any> {
-    return this.http.get('//localhost:8080/rest/slotmachine?slotroomId='+slotroomId);
+    return this.http.get(this.URI + 'rest/slotmachine?slotroomId='+slotroomId);
   }
 
   create(slotmachine: any): Observable<any> {
-    return this.http.post('//localhost:8080/rest/slotmachine', slotmachine);
+    return this.http.post(this.URI + 'rest/slotmachine', slotmachine);
   }
 
   update(slotmachine: any): Observable<any> {
-    return this.http.put('//localhost:8080/rest/slotmachine', slotmachine);
+    return this.http.put(this.URI + 'rest/slotmachine', slotmachine);
   }
 
   delete(id: string) {
-    return this.http.delete('//localhost:8080/rest/slotmachine/'+id);
+    return this.http.delete(this.URI + 'rest/slotmachine/'+id);
   }
 }
