@@ -21,6 +21,8 @@ import { RegisterComponent } from './register/register.component';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { LogoutComponent } from './logout/logout.component';
 
+import { GrdFilterPipe } from './grd-filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { LogoutComponent } from './logout/logout.component';
     SlotmachineEditComponent,
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    GrdFilterPipe
   ],
   imports: [
     BrowserModule,

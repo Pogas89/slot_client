@@ -10,7 +10,7 @@ import { SlotmachineService } from '../slotmachine.service'
   styleUrls: ['./slotmachines.component.css']
 })
 export class SlotmachinesComponent implements OnInit, OnChanges {
-
+  public searchText : string;
   slotmachines: Slotmachine[];
   displayedColumns: string[] = ['model', 'version', 'factoryNumber', 'techService', 'skksNumber', 'slotroomAddres','edit' ,'delete'];
 

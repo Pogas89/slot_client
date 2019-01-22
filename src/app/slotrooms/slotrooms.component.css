@@ -1,3 +1,18 @@
   table {
     width: 100%;
   }
+  
+  .slotroom-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 70%;
+  }
+  
+  .slotroom-full-width {
+    width: 100%;
+  }
+  
+.example-container {
+  height: 500px;
+  overflow: auto;
+}

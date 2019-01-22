@@ -1,6 +1,12 @@
 <h2>Slotmachines</h2>
-
-<table mat-table [dataSource]="slotmachines" class="mat-elevation-z8">
+<form class="slotmachine-form">
+  <mat-form-field class="slotmachine-full-width">
+    <input matInput  [(ngModel)]="searchText" placeholder="Search.." name="search">
+  </mat-form-field>
+</form>
+<div class="example-container mat-elevation-z8">
+<table mat-table [dataSource]="slotmachines | grdFilter: {model: searchText, version: searchText, 
+  factoryNumber: searchText, techService: searchText, skksNumber: searchText, slotroomAddres: searchText}" class="mat-elevation-z8">
   <ng-container matColumnDef="model">
     <th mat-header-cell *matHeaderCellDef> Model </th>
     <td mat-cell *matCellDef="let slotmachine">{{slotmachine.model}}</td>
@@ -44,6 +50,6 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-  
+</div>  
 <br>
 <button color="primary" mat-raised-button routerLink="/slotmachine-add">Add</button>

@@ -10,7 +10,7 @@ import { SlotroomService } from '../slotroom.service';
   styleUrls: ['./slotrooms.component.css']
 })
 export class SlotroomsComponent implements OnInit, OnChanges {
-
+  public searchText : string;
   slotrooms: Slotroom[];
   displayedColumns: string[] = ['name', 'addres','edit' ,'delete'];
 
