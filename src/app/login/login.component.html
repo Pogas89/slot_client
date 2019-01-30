@@ -22,15 +22,10 @@
         </mat-card-content>
         <mat-card-actions>
           <button mat-raised-button color="primary">Login</button>
-          <mat-hint color="warn" *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+          <mat-error *ngIf="f.submitted && isLoginFailed">
             Login failed: {{errorMessage}}
-          </mat-hint>
+          </mat-error>
         </mat-card-actions>
       </form>
     </mat-card>
-
-    <!--
-      выпилить отсюда к админу
-    <a href="signup" class="btn btn-success">Sign Up</a>
-    -->
 </ng-template>

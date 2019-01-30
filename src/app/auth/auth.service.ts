@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
  
 import { JwtResponse } from './jwt-response';
 import { AuthLoginInfo } from './login-info';
-import { SignUpInfo } from './signup-info'
+import { SignUpInfo } from './signup-info';
+import { Property } from '../property';
  
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,8 +16,8 @@ const httpOptions = {
 })
 export class AuthService {
  
-  private loginUrl = 'https://protected-bayou-76067.herokuapp.com/rest/auth/signin';
-  private signupUrl = 'https://protected-bayou-76067.herokuapp.com/rest/auth/signup';
+  private loginUrl = Property.uri + 'rest/auth/signin'; //'https://protected-bayou-76067.herokuapp.com/rest/auth/signin';
+  private signupUrl = Property.uri + 'rest/auth/signup'; //'https://protected-bayou-76067.herokuapp.com/rest/auth/signup';
  
   constructor(private http: HttpClient) {
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 import { AuthService } from '../auth/auth.service';
 import { TokenStorageService } from '../auth/token-storage.service';
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService, 
     private tokenStorage: TokenStorageService, 
-    private location: Location
+    private location: Location,
+    private spinnerService: Ng4LoadingSpinnerService
   ) { }
  
   ngOnInit() {
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit {
   }
  
   onSubmit() {
+    this.spinnerService.show();
     console.log(this.form);
  
     this.loginInfo = new AuthLoginInfo(
@@ -51,11 +54,13 @@ export class LoginComponent implements OnInit {
         this.location.go("slotrooms");
       },
       error => {
+        setTimeout(()=>this.spinnerService.hide(),500);
         console.log(error);
         this.errorMessage = error.error.message;
         this.isLoginFailed = true;
       }
     );
+    ()=>this.spinnerService.hide();
   }
  
   reloadPage() {

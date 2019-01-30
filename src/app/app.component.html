@@ -10,5 +10,6 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
+<ng4-loading-spinner [timeout]="15000"> </ng4-loading-spinner>
 <router-outlet *ngIf="authority"></router-outlet>
 <app-login *ngIf="!authority"></app-login>

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'
+import { Property } from './property'
 
 @Injectable({
   providedIn: 'root'
 })
 export class SlotmachineService {
-  private URI = 'https://protected-bayou-76067.herokuapp.com/';
+  private URI = Property.uri; //'https://protected-bayou-76067.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 
