@@ -1,5 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 import { User } from '../user';
 import { UserService } from '../user.service';
@@ -12,12 +11,10 @@ import { UserService } from '../user.service';
 export class UsersComponent implements OnInit {
   public searchText : string;
   users: User[];
-  displayedColumns: string[] = ['username', 'delete'];
+  displayedColumns: string[] = ['username', 'reset', 'delete'];
 
   constructor(
-    private userService: UserService,
-    private route: ActivatedRoute,
-    private router: Router
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -34,5 +31,8 @@ export class UsersComponent implements OnInit {
   delete(id: string): void {
     this.userService.delete(id).subscribe();
     this.users = this.users.filter(item => item.id != id);
+  }
+  resetPass(id: string): void {
+    this.userService.resetPass(id).subscribe();
   }
 }
