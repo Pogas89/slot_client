@@ -22,6 +22,7 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { LogoutComponent } from './logout/logout.component';
 
 import { GrdFilterPipe } from './grd-filter.pipe';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { GrdFilterPipe } from './grd-filter.pipe';
     LoginComponent,
     RegisterComponent,
     LogoutComponent,
-    GrdFilterPipe
+    GrdFilterPipe,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

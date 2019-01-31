@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+  }
+  
+  .user-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 70%;
+  }
+  
+  .user-full-width {
+    width: 100%;
+  }
+  
+  .user-container {
+    height: 500px;
+    overflow: auto;
+  }
+  

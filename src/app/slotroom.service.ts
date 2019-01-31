@@ -7,7 +7,7 @@ import { Property } from './property'
   providedIn: 'root'
 })
 export class SlotroomService {
-  private URI =  Property.uri;//'https://protected-bayou-76067.herokuapp.com/';
+  private URI =  Property.uri;
 
   constructor(private http: HttpClient) { }
 
