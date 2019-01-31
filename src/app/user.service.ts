@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Property } from './property'
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private URI =  Property.uri;
+  private URI =  environment.uri;
 
   constructor(private http: HttpClient) { }
 

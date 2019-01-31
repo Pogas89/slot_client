@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  uri: 'https://protected-bayou-76067.herokuapp.com/'
+  
 };

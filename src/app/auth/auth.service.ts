@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
  
 import { JwtResponse } from './jwt-response';
 import { AuthLoginInfo } from './login-info';
 import { SignUpInfo } from './signup-info';
-import { Property } from '../property';
+import { environment } from 'src/environments/environment';
  
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,8 +16,8 @@ const httpOptions = {
 })
 export class AuthService {
  
-  private loginUrl = Property.uri + 'rest/auth/signin';
-  private signupUrl = Property.uri + 'rest/auth/signup';
+  private loginUrl = environment.uri + 'rest/auth/signin';
+  private signupUrl = environment.uri + 'rest/auth/signup';
  
   constructor(private http: HttpClient) {
   }
