@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { TokenStorageService } from './auth/token-storage.service';
 import { UsersComponent } from './users/users.component';
+import { PassChangeComponent } from './pass-change/pass-change.component';
 
  
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'slotmachine-add', component: SlotmachineAddComponent },
   { path: 'slotmachines', component: SlotmachinesComponent },
   { path: 'slotmachines/:slotroomId', component: SlotmachinesComponent },
-  { path: 'users', component: UsersComponent }
+  { path: 'users', component: UsersComponent },
+  { path: 'change-pass', component: PassChangeComponent }
 ];
  
 @NgModule({

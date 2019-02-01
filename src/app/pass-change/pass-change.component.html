@@ -1,0 +1,20 @@
+<mat-card *ngIf="isChanged; else chForm">
+  Password changed successfully! Relogin Please!
+  <br>
+  <span><a color="primary" mat-raised-button routerLink="/home">Ok</a></span>
+</mat-card>
+
+<ng-template #chForm>
+  <mat-card>
+    <form  #changePassForm="ngForm" class="changePass-form" (ngSubmit)="save()">
+        <mat-form-field>
+          <input matInput [(ngModel)]="password" placeholder="Enter new password" [type]="hide ? 'password' : 'text'" name="password" required="true">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!changePassForm.form.valid">save</button>
+        <button mat-raised-button color="secondary" type="button" (click)="goBack()">go back</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</ng-template>

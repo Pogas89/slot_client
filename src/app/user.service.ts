@@ -26,4 +26,8 @@ export class UserService {
   resetPass(id: string) {
     return this.http.get(this.URI + 'rest/user/reset/'+id);
   }
+
+  changePass(form: any) {
+    return this.http.put(this.URI + 'rest/user',form);
+  }
 }

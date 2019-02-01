@@ -18,13 +18,13 @@ export class UsersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getSlotrooms();
+    this.getUsers();
   }
 
   ngOnChanges() {
-    this.getSlotrooms();
+    this.getUsers();
   }
-  getSlotrooms(): void {
+  getUsers(): void {
     this.userService.getAll().subscribe(users => this.users = users);
   }
 
