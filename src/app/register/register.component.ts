@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { AuthService } from '../auth/auth.service';
 import { SignUpInfo } from '../auth/signup-info';
@@ -15,7 +16,10 @@ export class RegisterComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
  
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private location: Location
+    ) { }
  
   ngOnInit() { }
  
@@ -24,7 +28,8 @@ export class RegisterComponent implements OnInit {
  
     this.signupInfo = new SignUpInfo(
       this.form.username,
-      this.form.password);
+      this.form.password,
+      this.form.isAdmin);
  
     this.authService.signUp(this.signupInfo).subscribe(
       data => {
@@ -38,5 +43,10 @@ export class RegisterComponent implements OnInit {
         this.isSignUpFailed = true;
       }
     );
+  }
+
+  
+  goBack(): void {
+    this.location.back();
   }
 }

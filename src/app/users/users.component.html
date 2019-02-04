@@ -1,5 +1,7 @@
 <h2>Users</h2>
-
+<mat-card style="background: lightblue" *ngIf="isReset">
+  Password reset successfully!
+</mat-card>
 <form class="user-form">
     <mat-form-field class="user-full-width">
       <input matInput  [(ngModel)]="searchText" placeholder="Search.." name="search">

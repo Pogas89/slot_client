@@ -1,4 +1,4 @@
-<mat-card *ngIf="isSignedUp; else signupForm">
+<mat-card style="background: lightblue" *ngIf="isSignedUp; else signupForm">
   User added successfully!
   <br>
   <span><a color="primary" mat-raised-button routerLink="/users">Ok</a></span>
@@ -23,12 +23,14 @@
             <mat-hint *ngIf="password.errors.minlength">Password must be at least 6 characters</mat-hint>
           </mat-hint>
         </mat-form-field>
+        <mat-checkbox name="isAdmin" [(ngModel)]="form.isAdmin">Is Admin?</mat-checkbox>
       </mat-card-content>
       <mat-card-actions>
         <button mat-raised-button color="primary">Add user</button>
         <mat-hint *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
           Adding failed!<br/>{{errorMessage}}
         </mat-hint>
+        <button mat-raised-button color="secondary" type="button" (click)="goBack()">go back</button>
       </mat-card-actions>
     </form>
   </mat-card>

@@ -10,6 +10,7 @@ import { UserService } from '../user.service';
 })
 export class UsersComponent implements OnInit {
   public searchText : string;
+  isReset = false;
   users: User[];
   displayedColumns: string[] = ['username', 'reset', 'delete'];
 
@@ -34,5 +35,6 @@ export class UsersComponent implements OnInit {
   }
   resetPass(id: string): void {
     this.userService.resetPass(id).subscribe();
+    this.isReset=true;
   }
 }
