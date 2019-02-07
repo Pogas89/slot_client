@@ -13,6 +13,7 @@ import { AuthLoginInfo } from '../auth/login-info';
 })
 export class LoginComponent implements OnInit {
   form: any = {};
+  hide = true;
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
